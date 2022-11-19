@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+
+<h:head>
+  <title>PrimeFaces Data Table Example</title>
+  <h:outputStylesheet library="css" name="main.css"  />
+</h:head>
+
+<h:body>
+
+  <h:dataTable value="#{DoctorsView.getDoctors()}" var="o"
+    styleClass="order-table"
+    headerClass="order-table-header"
+    rowClasses="order-table-odd-row,order-table-even-row"
+  >
+
+    <h:column>
+      <!-- column header -->
+      <f:facet name="header">Id</f:facet>
+      <!-- row record -->
+      #{o.id}
+    </h:column>
+
+    <h:column>
+      <f:facet name="header">Name</f:facet>
+      #{o.name}
+    </h:column>
+
+    <h:column>
+      <f:facet name="header">Department</f:facet>
+      #{o.department}
+    </h:column>
+
+    <h:column>
+      <f:facet name="header">Specialty</f:facet>
+      #{o.specialty}
+    </h:column>
+
+  </h:dataTable>
+</h:body>
+</html>
